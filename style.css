@@ -1,0 +1,67 @@
+* {
+    border: 1px dashed darkgray;
+}
+
+/* Table styles */
+table {
+    width:250px;
+    border: outset 3px blueviolet;
+    border-radius: 10px;
+    margin: auto;
+    background-color: silver;
+
+}
+
+td,
+th {
+    border: solid 1px blueviolet;
+    border-radius: 5px;
+    padding: 1px;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+/*inline-block to split main image div*/
+#ignignoktBody,
+#errBody,
+#spacecraftBody {
+    display: inline-block;
+    margin: auto;
+}
+
+/*control image size*/
+#errImage {
+    height: 200px;
+}
+
+/*control message wrap*/
+#ignignoktMessage,
+#errMessage {
+    inline-size: 400px;
+    height: 100px;
+}
+
+/* buttons*/
+button {
+    border: solid, 1px, black;
+    border-radius: 5px;
+    width: 125px;
+}
+
+#controls {
+    margin: auto;
+}
+
+/*background  https://www.w3schools.com/cssref/pr_background-position.asp*/
+body {
+        background-image: url('assets/images/ATHF_House.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: justify;
+        background-size: cover;
+     }
+
+/*paragraph font*/
+#goal {
+    font-size: larger;
+}
