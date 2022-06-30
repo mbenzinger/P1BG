@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let resetGame = document.querySelector("#resetGame")
     let errWin = document.querySelector("#err")
     let youWin = document.querySelector("#you")
+    let total = document.querySelector("#total")
     let errWinCount = 0
     let youWinCount = 0
     let totalCount = 0
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errImage.src = "assets/images/err-head.png";
             ignignoktImage.src = "assets/images/ignignoktl.png";
             errMessage.textContent = "Hey, put me back!";
-            ignignoktMessage.textContent = "Get up, Err.";
+            ignignoktMessage.textContent = "Err, get up.";
             youWinCount++;
         } else {   
             let randomMessage = Math.round(Math.random()*9)  
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         errWin.textContent = errWinCount;
         youWin.textContent = youWinCount;
+        total.textContent = totalCount;
     })
 
     resetGame.addEventListener('click', function() {
@@ -73,15 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
             totalCount = 0;
             errWin.textContent = errWinCount;
             youWin.textContent = youWinCount;
+            total.textContent = totalCount;
     })
-}
-//if(totalCount<7) {
-//    
-//} else {
-//    if (youWinCount>errWinCount) {
-//
-//    } else {
-//
-//    }
-//}
-)
+})

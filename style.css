@@ -2,6 +2,10 @@
     border: 1px dashed darkgray;
 }
 
+main {
+    text-align: center;
+}
+
 /* Table styles */
 table {
     width:250px;
@@ -31,7 +35,10 @@ th {
 
 /*control image size*/
 #errImage {
-    height: 200px;
+    height: 140px;
+}
+#ignignoktImage {
+    height: 375px;
 }
 
 /*control message wrap*/
@@ -42,10 +49,11 @@ th {
 }
 
 /* buttons*/
-button {
+#controls {
     border: solid, 1px, black;
     border-radius: 5px;
     width: 125px;
+    align-content: center;
 }
 
 #controls {
@@ -65,3 +73,4 @@ body {
 #goal {
     font-size: larger;
 }
+
