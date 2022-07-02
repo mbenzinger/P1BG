@@ -35,10 +35,17 @@ th {
 
 /*control image size*/
 #errImage {
-    height: 140px;
+    height: 80px;
+
 }
 #ignignoktImage {
-    height: 375px;
+    height: 275px;
+
+}
+
+#spacecraft {
+    height: 500px;
+
 }
 
 /*control message wrap*/
@@ -46,6 +53,7 @@ th {
 #errMessage {
     inline-size: 400px;
     height: 100px;
+
 }
 
 /* buttons*/
@@ -54,6 +62,7 @@ th {
     border-radius: 5px;
     width: 125px;
     align-content: center;
+    display: inline-block;
 }
 
 #controls {
