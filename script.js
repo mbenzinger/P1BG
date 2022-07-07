@@ -36,27 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let gameOver = false;
     let gameLimit = 5;
     let sceneImage = [
-        '"url(./assets/images/ATHF_House.jpg)"',
-        '"url(./assets/images/ATHF_CarlsHouse.png)"',
-        '"url(./assets/images/ATHF_Mall.jpg)"']
+        '"url(assets/images/ATHF_House.jpg)"',
+        '"url(assets/images/ATHF_CarlsHouse.png)"',
+        '"url(assets/images/ATHF_Mall.jpg)"']
     let i=0
-    document.getElementById('body').style.backgroundImage= 'url(./assets/images/ATHF_House.jpg)';
-    /*function below from https://www.w3schools.com/howto/howto_js_animate.asp*/
-    /*let id = null;
-    function moveIgnignokt() {
-        let elem = document.getElementById("ignignoktImage");
-        let pos = 0;
-        clearInterval(id);
-        id = setInterval(frame, 10);
-        function frame() {
-            if (pos == 350) {
-                clearInterval(id);
-            } else {
-                pos++;
-                elem.style.left = pos + 'px';
-            }
-        }
-        }*/
+    document.getElementById('body').style.backgroundImage= 'url(assets/images/ATHF_House.jpg)';
 
     flipErr.addEventListener('click', function() {
         if (!gameOver) {
@@ -70,14 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
             youWinCount++;
         } else {   
             let randomMessage = Math.round(Math.random()*9)
-            /*This code was moved to the endgame when Mooninites win*/  
-            /*if(randomMessage == 7) {
-                errImage.src = "assets/images/err-flipoff.png";
-                ignignoktImage.src = "assets/images/ignignokt-flipoff.png";    
-            } else {
-                errImage.src = "assets/images/err-feet.png";
-                ignignoktImage.src = "assets/images/ignignoktl.png";
-            }*/
             errMessage.textContent = errMessages[randomMessage];
             ignignoktMessage.textContent = ignignoktMessages[randomMessage];
             errWinCount++;
