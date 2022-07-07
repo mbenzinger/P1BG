@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'We smoke as we shoot the bird!',
         'Man, you hear what he\'s saying?!',
         'On the moon, nerds get their pants pulled down and they are spanked with moon rocks',
-        'Take two, mother muchachos!',
+        'Challenge us!',
         'Hand over those magazines!',
         'and then you can get tore up!'];
     let ignignoktMessages = [
@@ -30,18 +30,33 @@ document.addEventListener('DOMContentLoaded', function () {
         'Light up.',
         'Our race is hundreds of years beyond yours.',
         'Your roommate is a nerd.',
-        'I hope he can see this, because I\'m doing it as hard as I possibly can.',
+        'Our vertical leap is beyond all measurement.',
         'Give us your pornography.',
         'We shall aquire some wine on the way to the mall.'];
     let gameOver = false;
-    let gameLimit = 7;
-    //let sceneImage = [
-    //    'assets/images/ATHF_House.jpg',
-    //    'assets/images/ATHF_CarlsHouse.png',
-    //    'assets/images/ATHF_Mall.jpg']
-    //let i=0
-
-
+    let gameLimit = 5;
+    let sceneImage = [
+        '"url(./assets/images/ATHF_House.jpg)"',
+        '"url(./assets/images/ATHF_CarlsHouse.png)"',
+        '"url(./assets/images/ATHF_Mall.jpg)"']
+    let i=0
+    document.getElementById('body').style.backgroundImage= 'url(./assets/images/ATHF_House.jpg)';
+    /*function below from https://www.w3schools.com/howto/howto_js_animate.asp*/
+    /*let id = null;
+    function moveIgnignokt() {
+        let elem = document.getElementById("ignignoktImage");
+        let pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.left = pos + 'px';
+            }
+        }
+        }*/
 
     flipErr.addEventListener('click', function() {
         if (!gameOver) {
@@ -54,14 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
             ignignoktMessage.textContent = "Err, get up.";
             youWinCount++;
         } else {   
-            let randomMessage = Math.round(Math.random()*9)  
-            if(randomMessage == 7) {
+            let randomMessage = Math.round(Math.random()*9)
+            /*This code was moved to the endgame when Mooninites win*/  
+            /*if(randomMessage == 7) {
                 errImage.src = "assets/images/err-flipoff.png";
                 ignignoktImage.src = "assets/images/ignignokt-flipoff.png";    
             } else {
                 errImage.src = "assets/images/err-feet.png";
                 ignignoktImage.src = "assets/images/ignignoktl.png";
-            }
+            }*/
             errMessage.textContent = errMessages[randomMessage];
             ignignoktMessage.textContent = ignignoktMessages[randomMessage];
             errWinCount++;
@@ -72,16 +88,48 @@ document.addEventListener('DOMContentLoaded', function () {
         if (totalCount == gameLimit) {gameOver = true}
     } else {
         if (youWinCount>errWinCount) {
-            alert("YOU WIN, CONGRADULATIONS!")
-        } else {
-            alert("SORRY, THE MOONINITES WIN!")
+            alert("YOU WIN, CONGRADULATIONS!");
+            errImage.src = "assets/images/err-head.png";
+            ignignoktMessage.textContent = "Let's get out of here.";
+            document.getElementById("ignignoktImage").classList.remove("ignignoktStatic");
+            document.getElementById("ignignoktImage").classList.add("ignignoktMove");
+            document.getElementById("ignignoktMessage").classList.remove("ignignoktMessageShow");
+            document.getElementById("ignignoktMessage").classList.add("ignignoktMessageHide");
+            document.getElementById("errImage").classList.remove("errStatic");
+            document.getElementById("errImage").classList.add("errMove");
+            document.getElementById("errMessage").classList.remove("errMessageShow");
+            document.getElementById("errMessage").classList.add("errMessageHide");
+            //document.getElementById("spacecraft").classList.remove("spacecraftStatic");
+            //document.getElementById("spacecraft").classList.add("spacecraftMove");
+            moveIgnignokt()
+            } else {
+            alert("SORRY, THE MOONINITES WIN!");
+            errImage.src = "assets/images/err-flipoff.png";
+            ignignoktImage.src = "assets/images/ignignokt-flipoff.png"; 
+            errMessage.textContent = 'Take two, mother muchachos!';
+            ignignoktMessage.textContent = 'I hope he can see this, because I\'m doing it as hard as I possibly can.';
         }
     }})
 
     resetGame.addEventListener('click', function() {
+            //background switcher is not workin
+            if (i=sceneImage.length) { i=0;
+            } else {i++}
+            document.body.style.backgroundImage=sceneImage[i];
             errImage.src = "assets/images/err-feet.png";
-            ignignoktMessage.textContent = "Is your ego satsified?";
+            ignignoktImage.src = "assets/images/ignignoktl.png";
+            ignignoktMessage.textContent = "Is your ego satisfied?";
             errMessage.textContent = "DAMN NO!";
+            document.getElementById("ignignoktImage").classList.remove("ignignoktMove");
+            document.getElementById("ignignoktImage").classList.add("ignignoktStatic");
+            document.getElementById("ignignoktMessage").classList.remove("ignignoktMessageHide");
+            document.getElementById("ignignoktMessage").classList.add("ignignoktMessageShow");
+            document.getElementById("errImage").classList.remove("errMove");
+            document.getElementById("errImage").classList.add("errStatic");
+            document.getElementById("errMessage").classList.remove("errMessageHide");
+            document.getElementById("errMessage").classList.add("errMessageShow");
+            //document.getElementById("spacecraft").classList.remove("spacecraftMove");
+            //document.getElementById("spacecraft").classList.add("spacecraftStatic");
             errWinCount = 0;
             youWinCount = 0;
             totalCount = 0;

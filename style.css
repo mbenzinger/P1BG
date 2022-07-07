@@ -4,6 +4,12 @@
 
 main {
     text-align: center;
+    font-family: sans-serif monospace;
+}
+
+#gameName,
+#disclaim {
+    font-family: monospace;
 }
 
 /* Table styles */
@@ -13,7 +19,6 @@ table {
     border-radius: 10px;
     margin: auto;
     background-color: silver;
-
 }
 
 td,
@@ -36,16 +41,17 @@ th {
 /*control image size*/
 #errImage {
     height: 80px;
-
+    padding: 10px
 }
+
 #ignignoktImage {
     height: 275px;
-
 }
 
 #spacecraft {
     height: 500px;
-
+    position: relative;
+    left: -50px;
 }
 
 /*control message wrap*/
@@ -53,7 +59,6 @@ th {
 #errMessage {
     inline-size: 400px;
     height: 100px;
-
 }
 
 /* buttons*/
@@ -71,7 +76,7 @@ th {
 
 /*background  https://www.w3schools.com/cssref/pr_background-position.asp*/
 body {
-        background-image: url('assets/images/ATHF_House.jpg');
+        /*background-image: url('assets/images/ATHF_House.jpg');*/
         background-repeat: no-repeat;
         background-position: center;
         text-align: justify;
@@ -80,6 +85,32 @@ body {
 
 /*paragraph font*/
 #goal {
-    font-size: larger;
+    font-size: x-large;
 }
 
+/*end game class management*/
+/*fade out provided by https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect*/
+.errMessageHide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0s, opacity 1s linear;
+}
+
+.ignignoktMessageHide,
+.ignignoktMove,
+.errMove {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.errMessageShow,
+.ignignoktMessageShow {
+    visibility:visible;
+    opacity: 1;
+    transition: visibility 0s .5s, opacity .5s linear;
+}
+
+.spacecraftMove {
+ /*would like the spacecraft to move upwards when you win*/
+}
