@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("errMessage").classList.add("errMessageHide");
             //document.getElementById("spacecraft").classList.remove("spacecraftStatic");
             //document.getElementById("spacecraft").classList.add("spacecraftMove");
-            moveIgnignokt()
             } else {
             alert("SORRY, THE MOONINITES WIN!");
             errImage.src = "assets/images/err-flipoff.png";

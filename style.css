@@ -9,7 +9,9 @@ main {
 
 #gameName,
 #disclaim {
-    font-family: monospace;
+    font-family: sans-serif monospace;
+    font-size: x-large;
+    font-weight:bolder;
 }
 
 /* Table styles */
@@ -86,6 +88,7 @@ body {
 /*paragraph font*/
 #goal {
     font-size: x-large;
+    font-weight: bolder;
 }
 
 /*end game class management*/
@@ -111,6 +114,3 @@ body {
     transition: visibility 0s .5s, opacity .5s linear;
 }
 
-.spacecraftMove {
- /*would like the spacecraft to move upwards when you win*/
-}
