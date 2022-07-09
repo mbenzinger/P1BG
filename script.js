@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             youWinCount++;
         } else {   
             let randomMessage = Math.round(Math.random()*9)
+            errImage.src = "assets/images/err-feet.png";
             errMessage.textContent = errMessages[randomMessage];
             ignignoktMessage.textContent = ignignoktMessages[randomMessage];
             errWinCount++;
