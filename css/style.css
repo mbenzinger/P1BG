@@ -3,13 +3,17 @@
 }
 */
 
-headerbar {
-  height: 1500px;
+#headerbar {
+  height: 500px;
 }
 
 main {
   text-align: center;
   font-family: Trebuchet MS, Arial, sans-serif;
+}
+
+#imageBody {
+  height: 600px;
 }
 
 #gameName,
@@ -43,16 +47,19 @@ th {
 #spacecraftBody {
   display: inline-block;
   margin: auto;
+  position: relative;
 }
 
 /*control image size*/
 #errImage {
   height: 80px;
   padding: 10px;
+  position: relative;
 }
 
 #ignignoktImage {
   height: 275px;
+  position: relative;
 }
 
 #spacecraft {
@@ -77,9 +84,6 @@ th {
   display: inline-block;
   align-items: center;
   justify-content: space-between;
-}
-
-#controls {
   margin: auto;
 }
 
