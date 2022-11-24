@@ -1,15 +1,35 @@
-/** {
+
+$font-stack: Trebuchet MS, Arial, sans-serif;
+$light-color: #FFC300;
+$primary-color: #00183c;
+$secondary-color: #a2d0fc;
+
+  // SCSS Function that will make sure text is light on dark backgrounds, and dark on light backgrounds.
+  @function text-color-picker($color) {
+    @if(lightness($color) > 70) {
+      @return black;
+    } @else {
+      @return white;
+    }
+  }
+
+* {
     border: 1px dashed darkgray;
 }
-*/
+
+headerbar {
+    height: 1500px;
+}
+
 main {
     text-align: center;
-    font-family: sans-serif monospace;
+    font-family: Trebuchet MS, Arial, sans-serif;
+
 }
 
 #gameName,
 #disclaim {
-    font-family: sans-serif monospace;
+    font-family: Trebuchet MS, Arial, sans-serif;
     font-size: x-large;
     font-weight:bolder;
 }
@@ -60,20 +80,23 @@ th {
 #ignignoktMessage,
 #errMessage {
     inline-size: 400px;
-    height: 100px;
+    max-height: 100px;
 }
 
 /* buttons*/
 #controls {
     border: solid, 1px, black;
     border-radius: 5px;
-    width: 125px;
+    width: 250px;
     align-content: center;
     display: inline-block;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #controls {
     margin: auto;
+
 }
 
 /*background  https://www.w3schools.com/cssref/pr_background-position.asp*/
