@@ -1,8 +1,14 @@
+.box {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
 /** {
   border: 1px dashed darkgray;
 }
 */
-
 #headerbar {
   height: 500px;
 }
@@ -124,5 +130,161 @@ body {
   opacity: 1;
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
+
+/*# sourceMappingURL=style.css.map */
+.btn-secondary, .btn-primary {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+}
+.btn-secondary:hover, .btn-primary:hover {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background-color: #002c6f;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #a2d0fc;
+  color: black;
+}
+
+.box {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+/** {
+  border: 1px dashed darkgray;
+}
+*/
+#headerbar {
+  height: 500px;
+}
+
+main {
+  text-align: center;
+  font-family: Trebuchet MS, Arial, sans-serif;
+}
+
+#imageBody {
+  height: 600px;
+}
+
+#gameName,
+#disclaim {
+  font-family: Trebuchet MS, Arial, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+/* Table styles */
+table {
+  width: 250px;
+  border: outset 3px blueviolet;
+  border-radius: 10px;
+  margin: auto;
+  background-color: silver;
+}
+
+td,
+th {
+  border: solid 1px blueviolet;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+/*inline-block to split main image div*/
+#ignignoktBody,
+#errBody,
+#spacecraftBody {
+  display: inline-block;
+  margin: auto;
+  position: relative;
+}
+
+/*control image size*/
+#errImage {
+  height: 80px;
+  padding: 10px;
+  position: relative;
+}
+
+#ignignoktImage {
+  height: 275px;
+  position: relative;
+}
+
+#spacecraft {
+  height: 500px;
+  position: relative;
+  left: -50px;
+}
+
+/*control message wrap*/
+#ignignoktMessage,
+#errMessage {
+  inline-size: 400px;
+  max-height: 100px;
+}
+
+/* buttons*/
+#controls {
+  border: solid, 1px, black;
+  border-radius: 5px;
+  width: 250px;
+  align-content: center;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+/*background  https://www.w3schools.com/cssref/pr_background-position.asp*/
+body {
+  /*background-image: url('assets/images/ATHF_House.jpg');*/
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: justify;
+  background-size: cover;
+}
+
+/*paragraph font*/
+#goal {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+/*end game class management*/
+/*fade out provided by https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect*/
+.errMessageHide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0s, opacity 1s linear;
+}
+
+.ignignoktMessageHide,
+.ignignoktMove,
+.errMove {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.errMessageShow,
+.ignignoktMessageShow {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
